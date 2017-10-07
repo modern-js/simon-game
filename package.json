@@ -1,0 +1,27 @@
+{
+  "name": "simon-game",
+  "version": "1.0.0",
+  "description": "Simon game",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modern-js/simon-game.git"
+  },
+  "keywords": [
+    "simon",
+    "game"
+  ],
+  "author": "Jimmy Skhirtladze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/modern-js/simon-game/issues"
+  },
+  "homepage": "https://github.com/modern-js/simon-game#readme",
+  "dependencies": {
+    "browserify": "^14.4.0",
+    "express": "^4.16.1"
+  }
+}
