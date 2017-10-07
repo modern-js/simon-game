@@ -128,5 +128,8 @@ const randomSequence = function() {
 }
 
 const makeSound = function(x) {
-  
+  let sounds = ['do','la','si','sol'];
+  let soundFile = '/sounds/'+sounds[x]+'.wav';
+  let audio = new Audio(soundFile);
+  audio.play();
 }

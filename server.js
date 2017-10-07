@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/styles",  express.static(__dirname + '/public/styles'));
 app.use("/scripts", express.static(__dirname + '/public/scripts'));
-app.use("/images",  express.static(__dirname + '/public/images'));
+app.use("/sounds",  express.static(__dirname + '/public/sounds'));
 
 app.get('',
   (req, res) => res.sendFile(__dirname + '/public/index.html')
