@@ -1,3 +1,5 @@
+const colors = ["#00b33c","#b32400","#b35900","#002db3"];
+//const altcolors = ["#80ffaa","#ff9980","#ffbf80","#809fff"];
 let gameOn = false;
 let strictOn = false;
 let allowClick = false;
@@ -19,12 +21,12 @@ const stop = function(){
   allowClick = false;
   gameOn = false;
   sequence = randomSequence();
+  initDesign();
 
   $("#start").one("click",start);
 }
 
 $(document).ready(stop);
-
 
 $("#strict").on("click", function(){
   if ( gameOn ) return;
@@ -44,8 +46,17 @@ $("#stop").on("click",function() {
   $("#stop").blur();
   $("#stop").css("background","linear-gradient(gray,lightblue)");
   setTimeout(function(){ $("#stop").css("background","");},200);
-//  initializeDesign();
 });
+
+const initDesign = function() {
+  for ( let i in colors ) {
+    let color = colors[i];
+    $("#"+i).css("background-color",color);
+  }
+  let w = ($("body").width()-400)/2;
+  let h = ($("body").height()-400)/2;
+  $("#containerbox").css("margin",h+"px "+w+"px "+h+"px "+w+"px");
+}
 
 const randomSequence = function() {
   let sequence=[];
