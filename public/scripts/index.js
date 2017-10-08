@@ -11,6 +11,12 @@ let sequence = [];
 let lighttime=600;
 let betweentime=300;
 
+
+const saveScore = function(count) {
+  let name = prompt('You achieved '+count+' points! Enter your name:');
+  if (name) $.post("http://localhost:8080/high?score="+count+"&name="+name, ()=>{});
+}
+
 $("b").on("click",function(){
   var id = $(this).attr("id");
   if ( id==='littleBox' ) return;
@@ -41,6 +47,7 @@ $("b").on("click",function(){
   }
   else {
     flash_counter("<em style='font-size:15px'>LOOSE</em>");
+    saveScore(count);
     setTimeout(stop,lighttime);
   }
 });
